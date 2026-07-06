@@ -1,0 +1,198 @@
+/* Sprint 2: Astrident Experience premium liquid motion layer */
+:root{
+  --glass-highlight:rgba(255,255,255,.85);
+  --glow:0 0 50px rgba(78,200,241,.35);
+}
+body{
+  isolation:isolate;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:auto -10% -22% -10%;
+  height:42vh;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(50% 100% at 50% 0%,rgba(78,200,241,.28),transparent 62%),
+    linear-gradient(90deg,transparent,rgba(78,200,241,.16),transparent);
+  border-radius:50% 50% 0 0;
+  filter:blur(2px);
+  animation:siteWave 8s var(--ease) infinite alternate;
+}
+@keyframes siteWave{
+  from{transform:translateX(-2%) scaleY(.9)}
+  to{transform:translateX(2%) scaleY(1.08)}
+}
+.header{
+  box-shadow:0 10px 40px rgba(13,43,69,.06);
+}
+.header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  height:2px;
+  width:100%;
+  background:linear-gradient(90deg,transparent,var(--primary),transparent);
+  transform:scaleX(.2);
+  opacity:.55;
+  animation:headerSmile 5s var(--ease) infinite alternate;
+}
+@keyframes headerSmile{to{transform:scaleX(.92)}}
+.splash::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:45% 55% 54% 46%;
+  background:linear-gradient(135deg,rgba(78,200,241,.45),rgba(255,255,255,.28));
+  filter:blur(.4px);
+  animation:dropMorph 2s var(--ease) forwards;
+}
+@keyframes dropMorph{
+  0%{transform:translateY(-120px) scale(.45);opacity:0}
+  35%{transform:translateY(10px) scale(.88);opacity:1;border-radius:60% 40% 55% 45%}
+  70%{transform:translateY(40px) scale(1.14);opacity:.6;border-radius:42% 58% 48% 52%}
+  100%{transform:translateY(52px) scale(1.55);opacity:0}
+}
+.splash__content{position:relative;z-index:2}.splash__mark{position:relative;overflow:hidden}.splash__mark::after,.btn::after,.service-card::after,.glass::after{
+  content:"";
+  position:absolute;
+  inset:-70% auto -70% -80%;
+  width:55%;
+  transform:rotate(18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  animation:shine 4.8s var(--ease) infinite;
+  pointer-events:none;
+}
+@keyframes shine{0%,55%{left:-90%;opacity:0}70%{opacity:1}100%{left:140%;opacity:0}}
+.brand__symbol{
+  animation:softFloat 4s var(--ease) infinite alternate;
+}
+@keyframes softFloat{to{transform:translateY(-3px)}}
+.nav a:not(.btn){position:relative;transition:color .3s var(--ease),opacity .3s var(--ease)}
+.nav a:not(.btn)::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-10px;
+  width:0;
+  height:3px;
+  border-radius:999px;
+  background:var(--primary);
+  transition:.34s var(--ease);
+}
+.nav a:not(.btn):hover{color:var(--primary-dark);opacity:1}
+.nav a:not(.btn):hover::after{left:0;width:100%}
+.hero__visual,.service-card,.doctor,.about__image,.contact__panel,.location__card,.map,.modal__card{
+  transform-style:preserve-3d;
+}
+.hero__visual{
+  box-shadow:var(--shadow),var(--glow);
+}
+.hero__visual::before{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:36px;
+  border:1px solid rgba(255,255,255,.58);
+  background:
+    radial-gradient(circle at 20% 18%,rgba(255,255,255,.76),transparent 22%),
+    radial-gradient(circle at 80% 30%,rgba(78,200,241,.18),transparent 28%);
+  pointer-events:none;
+  z-index:1;
+}
+.hero__visual img{
+  transition:transform .75s var(--ease),filter .75s var(--ease);
+}
+.hero__visual:hover img{
+  transform:scale(1.025) translateY(-4px);
+  filter:saturate(1.05) contrast(1.02);
+}
+.hero__copy h1 span{
+  position:relative;
+}
+.hero__copy h1 span::after{
+  content:"";
+  position:absolute;
+  left:2%;
+  right:2%;
+  bottom:-8px;
+  height:10px;
+  border-bottom:5px solid var(--primary);
+  border-radius:0 0 80% 80%;
+  opacity:.55;
+  transform:scaleX(.1);
+  transform-origin:left;
+  animation:titleSmile 1.5s var(--ease) forwards 2.2s;
+}
+@keyframes titleSmile{to{transform:scaleX(1)}}
+.service-card{
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  animation:cardBreath 5s var(--ease) infinite alternate;
+  animation-delay:calc(var(--i,0) * .18s);
+}
+.service-card:nth-child(1){--i:1}.service-card:nth-child(2){--i:2}.service-card:nth-child(3){--i:3}.service-card:nth-child(4){--i:4}.service-card:nth-child(5){--i:5}.service-card:nth-child(6){--i:6}
+@keyframes cardBreath{to{transform:translateY(-4px)}}
+.service-card:hover{
+  background:
+    radial-gradient(circle at var(--card-x,50%) var(--card-y,50%),rgba(255,255,255,.92),rgba(255,255,255,.5) 34%,rgba(78,200,241,.08) 100%);
+}
+.service-card__icon{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 12px 28px rgba(78,200,241,.16);
+  transition:.38s var(--ease);
+}
+.service-card:hover .service-card__icon{
+  transform:translateY(-4px) scale(1.06) rotate(-2deg);
+}
+.modal.is-open::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(78,200,241,.22),transparent 28%),
+    radial-gradient(circle at 80% 70%,rgba(78,200,241,.18),transparent 30%);
+}
+.modal__card{
+  position:relative;
+  box-shadow:0 34px 120px rgba(0,0,0,.28),0 0 70px rgba(78,200,241,.22);
+}
+.modal__grid img{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 48px rgba(13,43,69,.12);
+}
+.doctor:hover,.about__image:hover,.contact__panel:hover,.location__card:hover{
+  transform:translateY(-6px);
+  transition:.38s var(--ease);
+}
+.map{
+  position:relative;
+  overflow:hidden;
+}
+.map::before{
+  content:"";
+  position:absolute;
+  inset:24px;
+  border-radius:26px;
+  background:
+    repeating-linear-gradient(28deg,transparent 0 30px,rgba(78,200,241,.12) 31px 33px),
+    repeating-linear-gradient(108deg,transparent 0 34px,rgba(13,43,69,.08) 35px 37px);
+  opacity:.8;
+}
+.map span,.map p{position:relative;z-index:2}
+.float-wa{
+  border:3px solid rgba(255,255,255,.72);
+}
+.float-wa::before{
+  content:"";
+  position:absolute;
+  inset:-9px;
+  border-radius:50%;
+  border:1px solid rgba(32,199,99,.28);
+  animation:waRing 1.9s var(--ease) infinite;
+}
+@keyframes waRing{to{transform:scale(1.32);opacity:0}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
