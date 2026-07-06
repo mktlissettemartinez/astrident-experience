@@ -1,0 +1,121 @@
+/* Sprint 3: depth, section state and premium liquid interaction */
+:root{
+  --depth: 0px;
+  --section-glow: rgba(78,200,241,.22);
+}
+.hero__visual,
+.service-card,
+.doctor,
+.about__image,
+.location__card,
+.contact__panel{
+  will-change: transform;
+}
+.hero__visual.is-tilting,
+.service-card.is-tilting{
+  transform: perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px) scale(1.015);
+}
+.service-card.is-tilting{
+  box-shadow: 0 30px 70px rgba(16,34,53,.16), 0 0 50px rgba(78,200,241,.18);
+}
+.hero__visual.is-tilting{
+  box-shadow: 0 34px 100px rgba(16,34,53,.16), 0 0 80px rgba(78,200,241,.24);
+}
+.section{
+  transition: background .8s var(--ease);
+}
+.section.section-active::before{
+  content:"";
+  position:absolute;
+  inset:8% -16% auto auto;
+  width:340px;
+  height:340px;
+  border-radius:45% 55% 50% 50%;
+  background:radial-gradient(circle, var(--section-glow), transparent 64%);
+  z-index:-1;
+  animation:sectionPulse 5s var(--ease) infinite alternate;
+}
+@keyframes sectionPulse{
+  to{transform:translate(-22px,18px) scale(1.12);opacity:.72}
+}
+.nav a.is-active:not(.btn){
+  color:var(--primary-dark);
+  opacity:1;
+}
+.nav a.is-active:not(.btn)::after{
+  left:0;
+  width:100%;
+}
+.progress-line{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:var(--scroll-progress,0%);
+  background:linear-gradient(90deg,var(--primary),#058ce0,#ffffff);
+  z-index:2000;
+  box-shadow:0 0 18px rgba(78,200,241,.55);
+}
+.cursor-orb{
+  position:fixed;
+  left:var(--mx,50vw);
+  top:var(--my,50vh);
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  border:1px solid rgba(78,200,241,.55);
+  box-shadow:0 0 30px rgba(78,200,241,.24);
+  pointer-events:none;
+  z-index:2500;
+  transform:translate(-50%,-50%);
+  opacity:.55;
+  transition:width .25s var(--ease),height .25s var(--ease),opacity .25s var(--ease);
+}
+body.cursor-expand .cursor-orb{
+  width:52px;
+  height:52px;
+  opacity:.28;
+}
+.particle-field{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:-1;
+}
+.particle{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(78,200,241,.3);
+  box-shadow:0 0 18px rgba(78,200,241,.35);
+  animation:particleFloat var(--duration,9s) var(--ease) infinite alternate;
+}
+@keyframes particleFloat{
+  to{transform:translate3d(var(--dx,18px),var(--dy,-38px),0) scale(1.45);opacity:.25}
+}
+.service-card:active{
+  transform:scale(.98);
+}
+.modal__card{
+  animation:liquidOpen .55s var(--ease) forwards;
+}
+@keyframes liquidOpen{
+  0%{opacity:0;transform:translateY(24px) scale(.9);border-radius:48% 52% 44% 56%}
+  65%{border-radius:34px;transform:translateY(-4px) scale(1.015)}
+  100%{opacity:1;transform:translateY(0) scale(1);border-radius:36px}
+}
+.btn,
+.service-card,
+summary,
+.float-wa{
+  -webkit-tap-highlight-color: transparent;
+}
+.image-note{
+  backdrop-filter:blur(16px);
+}
+@media(max-width:760px){
+  .cursor-orb{display:none}
+  .section.section-active::before{width:220px;height:220px;opacity:.55}
+}
