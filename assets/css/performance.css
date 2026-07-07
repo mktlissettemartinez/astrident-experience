@@ -1,0 +1,15 @@
+/* Performance pass: keep premium look, remove heavy motion */
+.splash{animation:splashOut .35s ease forwards .8s}.splash__content{animation:none}.smile path{animation:draw .55s ease forwards .1s}
+.liquid-engine,.particle-field,.cursor-orb,.transition-wave,.liquid{display:none!important}
+body::before,body::after,.header::after,.services::before,.splash::before,.hero__copy::before{display:none!important}
+.glass{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(255,255,255,.86)}
+.service-card,.brand__symbol,.float-wa,.hero__visual:after{animation:none!important}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(16,34,53,.1)}
+.service-card:before{display:none}.service-card:after,.glass:after,.btn:after{display:none!important}
+.hero__visual,.service-card,.doctor,.about__image,.location__card,.contact__panel{will-change:auto!important;transform:none!important}
+.hero__visual img,.about__image img,.doctor img,.modal__grid img{content-visibility:auto}
+.reveal{opacity:1!important;transform:none!important;transition:none!important}
+@media(max-width:980px){
+  .hero{padding-top:24px}.hero__grid{gap:18px}.hero__copy{order:1}.hero__visual{order:2}.hero__copy h1{display:block!important;line-height:1.02;margin:14px 0;font-size:clamp(40px,12vw,56px)}.hero__copy h1 span{display:inline;background:linear-gradient(135deg,var(--primary),#058ce0);-webkit-background-clip:text;color:transparent}.hero__visual img{height:360px;object-fit:contain}.splash__logo{width:170px}.brand__logo{width:128px}
+}
+@media(max-width:420px){.hero__visual img{height:300px}.hero__copy h1{font-size:39px}.section{padding:46px 0}}
