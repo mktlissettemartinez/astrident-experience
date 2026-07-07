@@ -1,0 +1,48 @@
+/* Mobile readability fix: make the phone version clear, fast and usable */
+@media (max-width: 760px){
+  :root{--ink:#102235;--muted:#4f6477;--primary-dark:#0798d4}
+  body{color:var(--ink)!important;background:#f7fbff!important}
+  .header{background:rgba(255,255,255,.96)!important;box-shadow:0 8px 24px rgba(16,34,53,.08);border-bottom:1px solid rgba(78,200,241,.18)}
+  .brand__logo{width:150px!important;filter:none!important;opacity:1!important}
+  .nav-toggle{background:#123047!important;color:#fff!important;border:1px solid rgba(78,200,241,.35)!important;width:58px;height:58px;border-radius:18px}
+  .nav{background:#fff!important;border:1px solid rgba(78,200,241,.22)!important;box-shadow:0 18px 46px rgba(16,34,53,.14)!important}
+  .nav a:not(.btn){color:#102235!important;opacity:1!important;background:#f4fbff}
+  .hero{padding:34px 0 42px!important}
+  .hero__grid{text-align:center!important}
+  .eyebrow{color:#0798d4!important;background:#fff!important;border-color:rgba(78,200,241,.35)!important;opacity:1!important}
+  h1,h2,h3,.service-card strong,summary,.values strong{color:#102235!important;opacity:1!important;text-shadow:none!important}
+  h1 span{color:#0798d4!important;background:none!important;-webkit-background-clip:initial!important}
+  h1{font-size:42px!important;line-height:1.05!important;margin:16px 0!important;letter-spacing:-.035em!important}
+  h2{font-size:32px!important;line-height:1.12!important;letter-spacing:-.025em!important}
+  p,.service-card small,.values span,details p,.doctor p,.location__card p,.contact__panel p{color:#526779!important;opacity:1!important}
+  .hero__copy p{font-size:17px!important;color:#526779!important}
+  .hero__visual,.about__image,.services,.doctor,.location__card,.contact__panel,details{background:#fff!important;border:1px solid rgba(78,200,241,.2)!important;box-shadow:0 12px 30px rgba(16,34,53,.08)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .hero__visual img{height:330px!important;object-fit:contain!important;object-position:center bottom!important}
+  .hero__badge{background:#fff!important;color:#102235!important;box-shadow:0 8px 20px rgba(16,34,53,.08)!important}
+  .section{padding:48px 0!important}
+  .section__head{margin-bottom:24px!important}
+  .section__head p{font-size:16px!important;color:#526779!important}
+  .services{grid-template-columns:1fr!important;padding:18px!important;gap:14px!important}
+  .service-card{min-height:118px!important;background:#fff!important;border:1px solid rgba(78,200,241,.25)!important;color:#102235!important;box-shadow:none!important}
+  .service-card__icon{background:#eaf8ff!important;box-shadow:none!important}
+  .about__image{min-height:auto!important;padding:8px!important;overflow:hidden!important}
+  .about__image img{height:auto!important;max-height:360px!important;object-fit:contain!important;background:#f5fbff!important}
+  .about__copy,.location__card,.contact__panel{padding:24px!important;background:#fff!important}
+  .values div{background:#fff!important;border-color:rgba(78,200,241,.25)!important}
+  .doctor img{height:260px!important;width:100%!important;object-fit:contain!important;background:#f5fbff!important}
+  .doctor h3{font-size:25px!important;margin-top:10px!important;color:#102235!important}
+  .faq__grid details{padding:20px!important;border-radius:20px!important}
+  summary{font-size:16px!important;color:#102235!important}
+  summary:after{color:#0798d4!important}
+  .location__card .btn,.contact__panel .btn{color:#fff!important;background:linear-gradient(135deg,#4ec8f1,#058ce0)!important}
+  .btn--ghost{background:#fff!important;color:#102235!important;border:1px solid rgba(78,200,241,.28)!important}
+  .footer{background:#06263d!important;color:#fff!important;padding-bottom:90px!important}
+  .footer p,.footer strong{color:#fff!important;opacity:1!important}
+  .footer__logo{opacity:1!important;filter:none!important}
+  .float-wa{bottom:82px!important;right:18px!important;width:58px!important;height:58px!important}
+  .modal{padding:12px!important;background:rgba(6,23,39,.72)!important}
+  .modal__card{background:#fff!important;border-radius:24px!important;max-height:88vh!important;color:#102235!important;box-shadow:0 22px 64px rgba(0,0,0,.22)!important}
+  .modal__grid img{max-height:280px!important;min-height:0!important;object-fit:contain!important;background:#f5fbff!important}
+  #modalTitle{color:#102235!important;font-size:30px!important}
+  #modalText,#modalBenefits li{color:#526779!important}
+}
