@@ -3,7 +3,7 @@ const services = [
     title: 'Limpieza Dental',
     short: 'Prevención y salud bucal',
     icon: '🦷',
-    image: 'assets/img/servicios/limpieza-dental.jpg',
+    image: 'assets/img/servicios/limpieza-dental.png',
     text: 'Elimina placa y sarro para mantener una sonrisa sana y prevenir enfermedades bucales.',
     benefits: ['Ayuda a prevenir caries y gingivitis', 'Mantiene una sensación de frescura', 'Permite detectar señales tempranas']
   },
@@ -11,7 +11,7 @@ const services = [
     title: 'Blanqueamiento Dental',
     short: 'Sonrisa más brillante',
     icon: '✨',
-    image: 'assets/img/servicios/blanqueamiento-dental.jpg',
+    image: 'assets/img/servicios/blanqueamiento-dental.png',
     text: 'Recupera el brillo natural de tu sonrisa con un tratamiento seguro y profesional.',
     benefits: ['Mejora la estética de la sonrisa', 'Procedimiento supervisado', 'Resultados visibles y cuidados personalizados']
   },
@@ -19,7 +19,7 @@ const services = [
     title: 'Ortodoncia',
     short: 'Alineación dental',
     icon: '😁',
-    image: 'assets/img/servicios/ortodoncia.jpg',
+    image: 'assets/img/servicios/ortodoncia.png',
     text: 'Corrige la posición de tus dientes para mejorar la función y la estética de tu sonrisa.',
     benefits: ['Mejora la mordida', 'Favorece la higiene dental', 'Acompañamiento durante el proceso']
   },
@@ -27,7 +27,7 @@ const services = [
     title: 'Endodoncia',
     short: 'Conservación del diente',
     icon: '🩺',
-    image: 'assets/img/servicios/endodoncia.jpg',
+    image: 'assets/img/servicios/endodoncia.png',
     text: 'Conserva dientes afectados eliminando la infección y aliviando el dolor.',
     benefits: ['Busca preservar la pieza dental', 'Atiende molestias profundas', 'Evaluación profesional del caso']
   },
@@ -35,7 +35,7 @@ const services = [
     title: 'Implantes Dentales',
     short: 'Reemplazo dental',
     icon: '🔩',
-    image: 'assets/img/servicios/implantes-dentales.jpg',
+    image: 'assets/img/servicios/implantes-dentales.png',
     text: 'Reemplaza piezas dentales perdidas con una solución estable, estética y duradera.',
     benefits: ['Solución funcional y estética', 'Ayuda a recuperar seguridad al sonreír', 'Planificación según cada paciente']
   },
@@ -43,7 +43,7 @@ const services = [
     title: 'Extracción Dental',
     short: 'Procedimiento seguro',
     icon: '🦷',
-    image: 'assets/img/servicios/extraccion-dental.jpg',
+    image: 'assets/img/servicios/extraccion-dental.png',
     text: 'Procedimiento realizado cuando un diente no puede conservarse, priorizando tu bienestar y recuperación.',
     benefits: ['Evaluación antes del procedimiento', 'Orientación para recuperación', 'Atención cuidadosa y profesional']
   }
